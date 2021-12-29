@@ -7,183 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <title>Project1: Home page</title>
-    </div>
-    <style>
-        .navbar {
-            background-color: rgb(206, 245, 206);
-            position: sticky;
-        }
-
-        .footer {
-            background-color: rgb(206, 245, 206);
-            width: 100%;
-            height: 250px;
-            padding-top: 2%;
-            bottom: 0;
-            margin-bottom: 0%;
-        }
-        .btn{
-            background-color: rgb(206, 245, 206);
-            color: black;
-            border: none;
-        }
-
-        .card {
-            width: 300px;
-            height: 400px;
-        }
-
-        .nav-link {
-            color: black;
-        }
-
-        .navbar-brand:hover {
-            color: rgb(84, 187, 84);
-        }
-
-        .navbar-brand {
-            color: black;
-            font-size: 40px;
-        }
-
-        .d-block {
-            height: 500px;
-            width: auto;
-        }
-    </style>
+    <link rel="stylesheet" href="css/project.css">
 </head>
 
 <body>
+    <!-- header -->
     <div class="navbar navbar-expand sticky-top">
         <div class="container">
-            <a href="#" class="navbar-brand"><img
+            <a href="home.html" class="navbar-brand"><img
                     src="https://img.icons8.com/color/48/000000/add-shopping-cart--v2.png" />HRMS</a>
-            <input class="form-control mr-sm-2" style="width: 800px;margin-left: 5%;" type="search" placeholder="Search"
-                aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </div>
-    </div>
-    <div class="navbar navbar-expand navbar-expand ">
-        <div class="container">
             <div class="ul navbar-nav nav justify-content-center" style="margin-left: 15%">
-                <li class="nav-item"><a href="#" class="nav-link">Type 1</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Type 2</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Type 3</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Type 4</a></li>
-                <li class="nav-item " style="margin-left: 300px;"><a href="#" class="nav-link">Help & Support</a></li>
+                <li class="nav-item"><a href="electro.html" class="nav-link"><img class="navimage" src="images/electronics.png"></a></li>
+                <li class="nav-item"><a href="#" class="nav-link"><img class="navimage" src="images/necklace.png"></a></li>
+                <li class="nav-item"><a href="#" class="nav-link"><img class="navimage" src="images/suit.png"></a></li>
+                <li class="nav-item"><a href="#" class="nav-link"><img class="navimage" src="images/dress.png"></a></li>
+                <li class="nav-item "><a href="#" class="nav-link"><img class="navimage" src="images/technical-support.png"></a></li>
+                <li class="nav-item " style="font-weight: bold;"><a href="#" class="nav-link">Log in</a></li>
+                <li class="nav-item " style="font-weight: bold;"><a href="#" class="nav-link">Sign Up</a></li>
             </div>
         </div>
     </div>
 
-    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-        <div class="col-md-5 p-lg-5 mx-auto my-5">
-            <h1 class="display-4 font-weight-normal">Punny headline</h1>
-            <p class="lead font-weight-normal">And an even wittier subheading to boot. Jumpstart your marketing efforts
-                with this example based on Apple's marketing pages.</p>
-            <a class="btn btn-outline-secondary" href="#">Coming soon</a>
-        </div>
-        <div class="product-device box-shadow d-none d-md-block"></div>
-        <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="card">
-                    <img class="card-img-top" src="images/1.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.</p>
-                    </div>
-                    <a href="#" class="btn btn-primary">See Profile</a>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img class="card-img-top" src="images/2.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This card has supporting text below as a natural lead-in to additional
-                            content.</p>
-                    </div>
-                    <a href="#" class="btn btn-primary">See Profile</a>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img class="card-img-top" src="images/logo.png" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                            content.</p>
-                    </div>
-                    <a href="#" class="btn btn-primary">See Profile</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
-    <br>
-
-    <!-- <footer class="footer">
-        <div class="container">
-          <p class="text-muted">Place sticky footer content here.</p>
-        </div>
-      </footer> -->
-    <footer class="footer width-full container-xl p-responsive" role="contentinfo">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md">
-                    <small class="d-block mb-3 text-muted">&copy; 2021-2022</small>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>Features</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="#">Cool stuff</a></li>
-                        <li><a class="text-muted" href="#">Random feature</a></li>
-                        <li><a class="text-muted" href="#">Team feature</a></li>
-                        <li><a class="text-muted" href="#">Stuff for developers</a></li>
-                        <li><a class="text-muted" href="#">Another one</a></li>
-                        <li><a class="text-muted" href="#">Last time</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>Resources</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="#">Resource</a></li>
-                        <li><a class="text-muted" href="#">Resource name</a></li>
-                        <li><a class="text-muted" href="#">Another resource</a></li>
-                        <li><a class="text-muted" href="#">Final resource</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>Resources</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="#">Business</a></li>
-                        <li><a class="text-muted" href="#">Education</a></li>
-                        <li><a class="text-muted" href="#">Government</a></li>
-                        <li><a class="text-muted" href="#">Gaming</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>About</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="#">Team</a></li>
-                        <li><a class="text-muted" href="#">Locations</a></li>
-                        <li><a class="text-muted" href="#">Privacy</a></li>
-                        <li><a class="text-muted" href="#">Terms</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="d-flex flex-justify-center pb-6">
-            <span class="f6 color-fg-muted"></span>
-          </div>
-    </footer>
 
 
 
-    <script src="js/bootstrap.bundle.min.js"></script>
+            <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
