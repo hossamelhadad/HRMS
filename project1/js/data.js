@@ -35,54 +35,100 @@ function createCards() {
 // create card element
 //card
 let cardDiv = document.createElement("div");
-cardDiv.className='col-md-6 col-lg-4 col-xl-3';
+cardDiv.className='col-lg-4 col-md-6';
 //cardbody
 let cardBody=document.createElement('div');
-cardBody.className='single-product';
+cardBody.className='product__item';
 //img div
 imgDiv=document.createElement('div');
-imgDiv.className='part-1';
+imgDiv.className='product__item__pic set-bg';
 // imge 
 imgElement=document.createElement('img');
 imgElement.src=men[index].image;
+//
 
-
-//add img to div img 
-imgDiv.appendChild(imgElement);
-//divcontent
-contentDiv=document.createElement('div');
-contentDiv.className='part-2';
-//title 
-titleElement=document.createElement('h3');
-titleElement.className='product-title';
-let productTitle=document.createTextNode(men[index].title);
-titleElement.appendChild(productTitle);
-//price
-priceElement=document.createElement('h4');
-priceElement.className='product-price';
-let productPrice=document.createTextNode(men[index].price+"$");
-priceElement.appendChild(productPrice);
- // cart 
+ // cart
  ulElement=document.createElement('ul');
+ ulElement.className='product__hover';
+ // first li
  liElement=document.createElement('li');
  aElement=document.createElement('a');
- aElement.href="#";
- imgCard=document.createElement('img');
-imgCard.src="https://img.icons8.com/color/48/000000/add-shopping-cart--v2.png";
-
-
-//add title to content div
-contentDiv.appendChild(titleElement);
-//add price element to content div
-contentDiv.appendChild(priceElement);
-//add img to a
+ aElement.href=men[index].image;
+ aElement.className='image-popup';
+ imgCard=document.createElement('span');
+ imgCard.className='fas fa-expand-alt';
+ //add img to a
 aElement.appendChild(imgCard);
 //add a to li
 liElement.appendChild(aElement);
 //add li to ul 
 ulElement.appendChild(liElement);
+
+// second li
+liElement=document.createElement('li');
+ aElement=document.createElement('a');
+ //aElement.href=men[index].image;
+ imgCard=document.createElement('span');
+ imgCard.className='far fa-heart';
+
+ //add a to li
+liElement.appendChild(aElement);
+//add li to ul 
+ulElement.appendChild(liElement);
+
+ // last li
+liElement=document.createElement('li');
+aElement=document.createElement('a');
+//aElement.href=men[index].image;
+imgCard=document.createElement('span');
+imgCard.className='fas fa-shopping-cart';
+
+//add a to li
+liElement.appendChild(aElement);
+//add li to ul 
+ulElement.appendChild(liElement);
+
+
+//add img to div img 
+imgDiv.appendChild(imgElement);
 //add ul to content div
-contentDiv.appendChild(ulElement)
+imgDiv.appendChild(ulElement);
+
+//divcontent
+contentDiv=document.createElement('div');
+contentDiv.className='product__item__text';
+//title 
+titleElement=document.createElement('h6');
+atext=document.createElement('a');
+// stars
+stardiv=document.createElement('div');
+stardiv.className= 'rating';
+starIcon=createElement('i');
+starIcon.className='fa fa-star';
+stardiv.appendChild(starIcon);
+starIcon.className='fa fa-star';
+stardiv.appendChild(starIcon);
+starIcon.className='fa fa-star';
+stardiv.appendChild(starIcon);
+starIcon.className='fa fa-star';
+stardiv.appendChild(starIcon);
+
+//atext.href='#';
+let productTitle=document.createTextNode(men[index].title);
+atext.appendChild(productTitle);
+//add title to content div
+contentDiv.appendChild(atext);
+// stars
+contentDiv.appendChild(stardiv);
+//price
+priceElement=document.createElement('div');
+priceElement.className='product__price';
+let productPrice=document.createTextNode(men[index].price+"$");
+priceElement.appendChild(productPrice);
+//add price element to content div
+contentDiv.appendChild(priceElement);
+
+
 
 //add imgcard to card body
 cardBody.appendChild(imgDiv);
