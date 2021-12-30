@@ -5,33 +5,269 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <title>Main page</title>
+    <title>HRMS</title>
+    <!--Web Font awsome-->
+    <link rel="stylesheet" href="Web Fonts (Google Fonts).html">
+    <!--Font awesome library (icons)-->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!--Font Cairo-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;700&display=swap" rel="stylesheet">
+    <!--Css file-->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/project.css">
+    <!--Javascript referance fill-->
+    <script src="https://kit.fontawesome.com/5c8f045964.js" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.x-git.min.js" defer></script>
+    <script src="js/bootstrap.min.js" defer></script>
+    <!--<script src="../JS/popper.min.js"></script>-->
 </head>
 
 <body>
-    <!-- header -->
+    <!--Start Upper Bar-->
+    <div class="upper-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <!--Navbar(logo&Search)-->
+                    <a href="#" class="navbar-brand">
+                        <!--<img src="../imges/logo2.png" alt="logo">-->
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="span1"> HRMS</span>
+                    </a>
+                </div>
+                <div class="col-sm">
+                    <input class="form-control mr-sm-2" style="width: 600px;margin-left: 5%;" type="search"
+                        placeholder="Search" aria-label="Search">
+                </div>
+                <div class="col-sm">
+                    <input type="submit" value="Search" name="search">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Upper Bar-->
+    <!--Start Navbar-->
     <div class="navbar navbar-expand sticky-top">
         <div class="container">
-            <a href="home.html" class="navbar-brand"><img
-                    src="https://img.icons8.com/color/48/000000/add-shopping-cart--v2.png" />HRMS</a>
-            <div class="ul navbar-nav nav justify-content-center" style="margin-left: 15%">
-                <li class="nav-item"><a href="electro.html" class="nav-link"><img class="navimage" src="images/electronics.png"></a></li>
-                <li class="nav-item"><a href="#" class="nav-link"><img class="navimage" src="images/necklace.png"></a></li>
+            <h2 id="spcial"> <img src="images/rank.png" style="width: 45px;height: 45px;">Spcial Shopping</h2>
+            <div class="ul navbar-nav nav justify-content-center">
+                <li class="nav-item"><a href="electro.html" class="nav-link"><img class="navimage"
+                            src="images/electronics.png"></a></li>
+                <li class="nav-item"><a href="#" class="nav-link"><img class="navimage" src="images/necklace.png"></a>
+                </li>
                 <li class="nav-item"><a href="#" class="nav-link"><img class="navimage" src="images/suit.png"></a></li>
                 <li class="nav-item"><a href="#" class="nav-link"><img class="navimage" src="images/dress.png"></a></li>
-                <li class="nav-item "><a href="#" class="nav-link"><img class="navimage" src="images/technical-support.png"></a></li>
-                <li class="nav-item " style="font-weight: bold;"><a href="#" class="nav-link">Log in</a></li>
-                <li class="nav-item " style="font-weight: bold;"><a href="signUp.html" class="nav-link">Sign Up</a></li>
+                <li class="nav-item "><a href="#" class="nav-link"><img class="navimage"
+                            src="images/technical-support.png"></a></li>
+                <li class="nav-item "><a href="#" class="nav-link">Login/Sign Up</a></li>
             </div>
+        </div>
+    </div>
+    <!--End Navbar-->
+    <!-----------Start Slider-------------->
+    <div class="slider">
+        <div id="main-slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <h1>Any WayYou Shope
+                    We've got you <span>covered</span></h1>
+                <div class="overlay"></div>
+                <div class="carousel-item active cr1">
+                </div>
+                <div class="carousel-item cr2">
+                </div>
+                <div class="carousel-item cr3">
+                </div>
+            </div>
+            <ol class="carousel-indicators">
+                <li data-target="#main-slider" data-slide-to="0" class="active"></li>
+                <li data-target="#main-slider" data-slide-to="1"></li>
+                <li data-target="#main-slider" data-slide-to="2"></li>
+            </ol>
         </div>
     </div>
 
 
+   
+    <!-------------End Slider------------------->
+    <!---------------Start Featuers-------------->
+    <!-- <div class="featuers">
+        <div class="container">
+            <div class="row">
+                <div class="col-ms-6 col-lg-3">
 
+                </div>
+            </div>
+           
 
-            <script src="js/bootstrap.bundle.min.js"></script>
+        </div>
+   </div> -->
+    <!----------------End Featuers--------------->
+    <!-- Categories Section Begin -->
+    <div class="categories">
+        <div class="container">
+            <div class="image-container">
+                <div class="box">
+                    <img src="images/elec.jpg" alt="image1">
+                    <div class="caption">
+                        <h4>Electronics</h4>
+                        <a href="electro.html">Shop Now</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="images/woman.webp" alt="image1">
+                    <div class="caption">
+                        <h4>Women's Fashion</h4>
+                        <a href="#">Shop Now</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="images/acc.jpg" alt="image1">
+                    <div class="caption">
+                        <h4>Accessories</h4>
+                        <a href="#">Shop Now</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="images/category-2.jpg" alt="image1">
+                    <div class="caption">
+                        <h4>Men's fashion</h4>
+                        <a href="#">Shop Now</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="images/insta-2.jpg" alt="image1">
+                    <div class="caption">
+                        <h4>Category</h4>
+                        <a href="#">Price</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="images/insta-3.jpg" alt="image1">
+                    <div class="caption">
+                        <h4>Category</h4>
+                        <a href="#">Price</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="images/insta-4.jpg" alt="image1">
+                    <div class="caption">
+                        <h4>Category</h4>
+                        <a href="#">Price</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="images/insta-5.jpg" alt="image1">
+                    <div class="caption">
+                        <h4>Category</h4>
+                        <a href="#">Price</a>
+                    </div>
+                </div>
+
+            </div>
+            <a href="#" class="more">More</a>
+
+        </div>
+    </div>
+    <!--End categories-->
+    <!-- products -->
+
+    <div class="containerCards">
+        <div class="container">
+            <h2> <span>New</span> Products</h2>
+            <div class="row" id="products">
+                <!-- product -->
+                <div class="col-md-6 col-lg-4 col-xl-3" onclick="getproduct()">
+                    <div id="product" class="single-product">
+                        <div class="part-1">
+                            <img src="images/shop-7.jpg" alt="">
+                        </div>
+                        <div class="part-2">
+                            <h3 class="product-title">Accessories</h3>
+                            <h4 class="product-price">$30.99</h4>
+                            <ul>
+                                <li><a href="#"><img
+                                            src="https://img.icons8.com/color/48/000000/add-shopping-cart--v2.png"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3" onclick="getproduct()">
+                    <div id="product" class="single-product">
+                        <div class="part-1">
+                            <img src="images/shop-4.jpg" alt="">
+                        </div>
+                        <div class="part-2">
+                            <h3 class="product-title">Men's Fashion</h3>
+                            <h4 class="product-price">$50.99</h4>
+                            <ul>
+                                <li><a href="#"><img
+                                            src="https://img.icons8.com/color/48/000000/add-shopping-cart--v2.png"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3" onclick="getproduct()">
+                    <div id="product" class="single-product">
+                        <div class="part-1">
+                            <img src="images/shop-3.jpg" alt="">
+                        </div>
+                        <div class="part-2">
+                            <h3 class="product-title">Woemn's Fashion</h3>
+                            <h4 class="product-price">$80.99</h4>
+                            <ul>
+                                <li><a href="#"><img
+                                            src="https://img.icons8.com/color/48/000000/add-shopping-cart--v2.png"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3" onclick="getproduct()">
+                    <div id="product" class="single-product">
+                        <div class="part-1">
+                            <img src="images/electronics1.png" alt="">
+                        </div>
+                        <div class="part-2">
+                            <h3 class="product-title">Electronics</h3>
+                            <h4 class="product-price">$299.99</h4>
+                            <ul>
+                                <li><a href="#"><img
+                                            src="https://img.icons8.com/color/48/000000/add-shopping-cart--v2.png"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="banner">
+        <div class="overlay"></div>
+        <h1>Shoping on <span>HRMS</span> is Easy</h1>
+    </div>
+    <!--Start Footer-->
+    <div class="footerhome">
+        <div class="containerhome">
+            <i class="fas fa-shopping-cart ic1"></i>
+            <span class="span1"> HRMS</span>
+
+            <p>We Are Social</p>
+
+            <div class="social-icons">
+                <a href="https://web.facebook.com/"><i class="fab fa-facebook-f "></i></a>
+                <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+                <a href="https://mail.google.com/"><i class="fa fa-google-plus"></i></a>
+                <a href="https://www.linkedin.com/feed/"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p class="copyright">&copy; 2021 <span>HRMS</span>All Right Reserved</p>
+        </div>
+    </div>
+    <!--End Footer-->
 </body>
 
 </html>
