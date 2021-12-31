@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HRMS-Electronics</title>
-   
+
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/project.css">
@@ -15,14 +15,28 @@
     <script src="js/jquery-3.x-git.min.js" defer></script>
     <script src="js/bootstrap.min.js" defer></script>
     <!--<script src="../JS/popper.min.js"></script>-->
+    <script type="text/javascript">
+        window.onload = function () {
+            setTimeout(document.getElementById('loadingDiv').style.display='none', 1000); //wait for page load PLUS one seconds.
+        };
+        function removeLoader() {
+            //$("#loadingDiv").hide(); //makes page more lightweight 
+            document.getElementById('loadingDiv').style.display='none';
+        }
+    </script>
 </head>
 
 <body onload="setcate('Electronics')">
     <!-- header -->
     <div class="navbar navbar-expand sticky-top">
         <div class="container">
-            <a href="home.html" class="navbar-brand"><img
-                    src="https://img.icons8.com/color/48/000000/add-shopping-cart--v2.png" />HRMS</a>
+            <div class="upper-bar">
+                <a href="home.html" class="navbar-brand">
+                    <!--<img src="../imges/logo2.png" alt="logo">-->
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="span1"> HRMS</span>
+                </a>
+            </div>
             <div class="ul navbar-nav nav justify-content-center" style="margin-left: 15%">
                 <li class="nav-item"><a href="electro.html" class="nav-link"><img class="navimage"
                             src="images/electronics.png"></a></li>
@@ -35,14 +49,20 @@
                             src="images/dress.png"></a></li>
                 <li class="nav-item "><a href="location.html" class="nav-link"><img class="navimage"
                             src="images/technical-support.png"></a></li>
-                <li class="nav-item "><a href="#" class="nav-link">Login/Sign Up</a></li>
+                <li class="nav-item "><a href="cardPage.html" class="nav-link"><img
+                            src="https://img.icons8.com/color/48/000000/add-shopping-cart--v2.png" /></a></li>
+                <li class="nav-item "><a href="signUp.html" class="nav-link">Login/Sign Up</a></li>
             </div>
         </div>
     </div>
+
+    <div id="loadingDiv" class="loader">Loading...</div>
+
+
     <!-- products -->
     <div class="containerCards">
         <div class="row" id="Products">
-           
+
         </div>
     </div>
 
@@ -50,7 +70,7 @@
     <div class="footerhome">
         <div class="containerhome">
             <i class="fas fa-shopping-cart ic1"></i>
-            <span class="span1"> MYCHOICE</span>
+            <span class="span1"> HRMS</span>
 
             <p>We Are Social</p>
 
@@ -60,7 +80,7 @@
                 <a href="https://mail.google.com/"><i class="fa fa-google-plus"></i></a>
                 <a href="https://www.linkedin.com/feed/"><i class="fab fa-linkedin"></i></a>
             </div>
-            <p class="copyright">&copy; 2021 <span>MyChoice</span>All Right Reserved</p>
+            <p class="copyright">&copy; 2021 <span>HRMS</span>All Right Reserved</p>
         </div>
     </div>
 
@@ -68,7 +88,7 @@
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/data.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </body>
 
 </html>
