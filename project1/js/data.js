@@ -78,6 +78,7 @@ imgElement.src=categoryType[index].image;
  liElement=document.createElement('li');
  aElement=document.createElement('a');
  aElement.href=categoryType[index].image;
+ 
 
  aElement.className='image-popup';
  imgCard=document.createElement('span');
@@ -145,6 +146,10 @@ let productTitle=document.createTextNode(categoryType[index].title);
 atext.appendChild(productTitle);
 //add title to content div
 contentDiv.appendChild(atext);
+atext.onclick= function (){
+  displayProduct(cardDiv.id,categoryType);
+  
+}
 // stars
 contentDiv.appendChild(stardiv);
 //price
@@ -168,10 +173,7 @@ var cardRow = document.getElementById('Products');
 
 cardRow.appendChild(cardDiv);
 
-cardDiv.onclick= function (){
-  displayProduct(cardDiv.id,categoryType);
-  
-}
+
   }
 
 
