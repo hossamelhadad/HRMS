@@ -213,4 +213,3 @@ function displayProduct(index,categ) {
    
  } 
 
-
