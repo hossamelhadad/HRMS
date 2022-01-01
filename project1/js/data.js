@@ -66,61 +66,59 @@ cardBody.className='product__item';
 //img div
 imgDiv=document.createElement('div');
 imgDiv.className='product__item__pic set-bg';
-// imge 
-imgElement=document.createElement('img');
-imgElement.src=categoryType[index].image;
-//
-
- // cart
- ulElement=document.createElement('ul');
- ulElement.className='product__hover';
- // first li
- liElement=document.createElement('li');
- aElement=document.createElement('a');
- aElement.href=categoryType[index].image;
- 
-
- aElement.className='image-popup';
- imgCard=document.createElement('span');
- imgCard.className='fas fa-expand-alt';
- //add img to a
-aElement.appendChild(imgCard);
-//add a to li
-liElement.appendChild(aElement);
-//add li to ul 
-ulElement.appendChild(liElement);
-
-// second li
-liElement=document.createElement('li');
- aElement=document.createElement('a');
- //aElement.href=men[index].image;
- imgCard=document.createElement('span');
- imgCard.className='far fa-heart';
- aElement.appendChild(imgCard);
-
- //add a to li
-liElement.appendChild(aElement);
-//add li to ul 
-ulElement.appendChild(liElement);
-
- // last li
-liElement=document.createElement('li');
-aElement=document.createElement('a');
-//aElement.href=categoryType[index].image;
-imgCard=document.createElement('span');
-imgCard.className='fas fa-shopping-cart';
-aElement.appendChild(imgCard);
-
-//add a to li
-liElement.appendChild(aElement);
-//add li to ul 
-ulElement.appendChild(liElement);
-
 
 //add img to div img 
+imgElement=document.createElement('img');
+imgElement.src=categoryType[index].image;
 imgDiv.appendChild(imgElement);
-//add ul to content div
-imgDiv.appendChild(ulElement);
+
+ // icons for porudct card when hover
+ ulIconElement=document.createElement('ul');
+ ulIconElement.className='product__hover';
+ 
+ // first li for expand icon
+ liExpandElement=document.createElement('li');
+ aExpandElement=document.createElement('a');
+
+ aExpandElement.className='image-popup';
+ expandIcon=document.createElement('span');
+ expandIcon.className='fas fa-expand-alt';
+ //add icon to a
+ aExpandElement.appendChild(expandIcon);
+//add a to li
+liExpandElement.appendChild(aExpandElement);
+//add li to ul 
+ulIconElement.appendChild(liExpandElement);
+
+
+// li for fav icon
+liFavElement=document.createElement('li');
+ aFavElement=document.createElement('a');
+ //favou icon
+ var favIcon=document.createElement('span');
+ favIcon.className='far fa-heart';
+ aFavElement.appendChild(favIcon);
+
+ //add a to li
+ liFavElement.appendChild(aFavElement);
+//add li to ul 
+ulIconElement.appendChild(liFavElement);
+
+ // last li for shopping icon
+liShopElement=document.createElement('li');
+aShopElement=document.createElement('a');
+shopIcon=document.createElement('span');
+shopIcon.className='fas fa-shopping-cart';
+aShopElement.appendChild(shopIcon);
+shopIcon.onclick= function (){
+  cheackOut(cardDiv.id,categoryType);
+  
+}
+
+//add a to li
+liShopElement.appendChild(aShopElement);
+//add li to ul 
+ulIconElement.appendChild(liShopElement);
 
 //divcontent
 contentDiv=document.createElement('div');
@@ -139,9 +137,9 @@ var stars =starIcon.cloneNode(true);
 stardiv.appendChild(stars);
 }
 
+//add stars to content div
+contentDiv.appendChild(stardiv);
 
-
-//atext.href='#';
 let productTitle=document.createTextNode(categoryType[index].title);
 atext.appendChild(productTitle);
 //add title to content div
@@ -150,8 +148,7 @@ atext.onclick= function (){
   displayProduct(cardDiv.id,categoryType);
   
 }
-// stars
-contentDiv.appendChild(stardiv);
+
 //price
 priceElement=document.createElement('div');
 priceElement.className='product__price';
@@ -160,7 +157,8 @@ priceElement.appendChild(productPrice);
 //add price element to content div
 contentDiv.appendChild(priceElement);
 
-
+//add ul to img div
+imgDiv.appendChild(ulIconElement);
 
 //add imgcard to card body
 cardBody.appendChild(imgDiv);
@@ -170,7 +168,7 @@ cardBody.appendChild(contentDiv);
 cardDiv.appendChild(cardBody);
 
 var cardRow = document.getElementById('Products');
-
+// finally the card 
 cardRow.appendChild(cardDiv);
 
 
@@ -179,17 +177,9 @@ cardRow.appendChild(cardDiv);
 
 }
 
-
-
-
-
-
-
-
-
 // display product in product page
 function displayProduct(index,categ) {
-  
+  //set data from clicked card
   localStorage.setItem('id',categ[index].id);
   localStorage.setItem('title',categ[index].title);
   localStorage.setItem('price',categ[index].price);
@@ -212,4 +202,17 @@ function displayProduct(index,categ) {
    
    
  } 
+
+
+ function cheackOut(current , prou) {
+  var titles ='title'+current;
+  var prices= 'price'+current;
+  var imges= 'image'+current;
+  console.log(titles);
+  localStorage.setItem(titles,prou[current].title);
+  localStorage.setItem(prices,prou[current].price);
+  localStorage.setItem(imges,prou[current].image);
+
+
+ }
 
