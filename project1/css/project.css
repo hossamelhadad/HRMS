@@ -449,11 +449,8 @@ font-weight: bold;
 color:var(--other-color) ;
 }
  .navbar-nav .nav-link  {
-margin-left: 20px;
-font-size: 16px;
-text-transform: uppercase;
-color: var(--second-color) !important;
-font-weight: bold;
+font-size: 20px;
+color: white !important;
 }
 .navbar-nav .active > .nav-link {
     color: var(--other-color) !important;
