@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HRMS</title>
-    
+
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/project.css">
@@ -21,8 +21,13 @@
     <!-- header -->
     <div class="navbar navbar-expand sticky-top">
         <div class="container">
-            <a href="home.html" class="navbar-brand"><img
-                    src="https://img.icons8.com/color/48/000000/add-shopping-cart--v2.png" />HRMS</a>
+            <div class="upper-bar">
+                <a href="home.html" class="navbar-brand">
+                    <!--<img src="../imges/logo2.png" alt="logo">-->
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="span1"> HRMS</span>
+                </a>
+            </div>
             <div class="ul navbar-nav nav justify-content-center" style="margin-left: 15%">
                 <li class="nav-item"><a href="electro.html" class="nav-link"><img class="navimage"
                             src="images/electronics.png"></a></li>
@@ -35,7 +40,10 @@
                             src="images/dress.png"></a></li>
                 <li class="nav-item "><a href="location.html" class="nav-link"><img class="navimage"
                             src="images/technical-support.png"></a></li>
-                <li class="nav-item "><a href="#" class="nav-link">Login/Sign Up</a></li>
+                <li class="nav-item "><a href="cardPage.html" class="nav-link"><img
+                            src="https://img.icons8.com/color/48/000000/add-shopping-cart--v2.png" /></a></li>
+                <li class="nav-item "><a href="signUp.html" class="nav-link">Sign Up /</a></li>
+                <li class="nav-item "><a href="login.html" class="nav-link"> Login</a></li>
             </div>
         </div>
     </div>
@@ -84,7 +92,10 @@
                         <ul>
                             <li><b>Availability: </b> <span>In Stock</span></li>
                             <li><b>Available size: </b> <span>XS S M L</span></li>
-                            <li><b>Available color: </b> <i class="fas fa-circle" style="color: rgb(180, 51, 29);"></i><i class="fas fa-circle" style="color: rgb(19, 18, 18);"></i><i class="fas fa-circle" style="color: rgb(47, 47, 167);"></i> </li>
+                            <li><b>Available color: </b> <i class="fas fa-circle"
+                                    style="color: rgb(180, 51, 29);"></i><i class="fas fa-circle"
+                                    style="color: rgb(19, 18, 18);"></i><i class="fas fa-circle"
+                                    style="color: rgb(47, 47, 167);"></i> </li>
                             <li><b>Shipping: </b> <span>01 day shipping. <samp>Free pickup today</samp></span></li>
                             <li><b>Weight: </b> <span>0.5 kg</span></li>
                             <li>
@@ -124,7 +135,7 @@
     </div>
     <!--End Footer-->
 
-<script src="js/getcarddata.js"></script>
+    <script src="js/getcarddata.js"></script>
 
 </body>
 
