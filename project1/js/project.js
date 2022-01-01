@@ -15,9 +15,9 @@ function checkName(e) {
     //return (key >= 'A' && key <= 'Z') || (key >= 'a' && key <= 'z');
 }
 
-var validname = false, validpass = false;
+var validname = false, validpass = false, username, pass;
 
-function login(e){
+function signUp(e){
 
     if(validname == true && validpass == true)
     {
@@ -32,28 +32,35 @@ function login(e){
 function blr(x){
     if(x.value.length > 3){   
         validname = true;
-        document.getElementById('invalidimg').innerHTML="<i class='fas fa-check'></i>";
+        username = x.value;
+        document.getElementById('invalidname').innerHTML="<i class='fas fa-check'></i>";
     }
     else{
-        document.getElementById('invalidimg').innerHTML="<i class='glyphicon glyphicon-remove'></i>";
+        document.getElementById('invalidname').innerHTML="<i class='glyphicon glyphicon-remove'></i>";
     }
 }
 function checkp(x){
     if(x.value.length < 4){
-        document.getElementById('invalidpassimg').innerHTML = "<i class='glyphicon glyphicon-remove'></i>";
+        document.getElementById('invalidpass').innerHTML = "<i class='glyphicon glyphicon-remove'></i>";
     }
     else{
-        document.getElementById('invalidpassimg').innerHTML = "<i class='fas fa-check'></i>";
+        document.getElementById('invalidpass').innerHTML = "<i class='fas fa-check'></i>";
     }
 }
 function checkiden(x){
-    if(document.getElementById('pass').value != null && (document.getElementById('pass').value === document.getElementById('rp').value)){
+    if(document.getElementById('pass').value != null && (document.getElementById('pass').value === document.getElementById('rpass').value)){
         validpass = true;
-        document.getElementById('invalididenimg').innerHTML = "<i class='fas fa-check'></i></br>";
-        document.getElementById('invalididen').innerHTML = "PerfectO!";
+        pass = x.value;
+        document.getElementById('invalidRpass').innerHTML = "<i class='fas fa-check'></i></br>";
+        document.getElementById('invalidtext').innerHTML = "PerfectO!";
     }
     else{
-       document.getElementById('invalididenimg').innerHTML = "<i class='glyphicon glyphicon-remove'></i></br>";
-       document.getElementById('invalididen').innerHTML = "NotSame!";
+       document.getElementById('invalidRpass').innerHTML = "<i class='glyphicon glyphicon-remove'></i></br>";
+       document.getElementById('invalidtext').innerHTML = "NotSame!";
+    }
+}
+function login(){
+    if((document.getElementById('fullname').value == username) && (document.getElementById('password').value==pass)){
+        window.location.href = "home.html"; 
     }
 }
