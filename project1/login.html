@@ -12,14 +12,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HRMS-Sign Up page</title>
-  <script src="js/project.js"></script>
-  <script src="https://kit.fontawesome.com/5c8f045964.js" crossorigin="anonymous"></script>
+  <title>HRMS-Log in page</title>
 
 </head>
 
 <body style="background-image: url('images/background.png');background-repeat: no-repeat;background-size: cover;z-index: 2;">
-    <form id="login" method="get" onsubmit="login(event)" action="home.html">
+    <form id="login" method="post" onsubmit="logins()" >
         <div class="upper-bar">
             <div class="navbar-brand">
               <!--<img src="../imges/logo2.png" alt="logo">-->
@@ -29,22 +27,29 @@
           <h3>Login</h3>
         <div class="left" style="padding-left: 30px; width: 100%;">
             <i class="glyphicon glyphicon-user"></i>
-            <input id="name" type="text" name="fullname" required placeholder="Enter Your Name"> 
+            <input id="loginName" type="text" name="loginName" required placeholder="Enter Your Name"> 
             <br>
             <br>
             <i class="fa fa-lock" style="font-size: 18px;"></i>
-            <input id="pass" type="password" name="password" placeholder="Password" required >
+            <input id="loginPass" type="password" name="loginpassword" placeholder="Password" required >
             <br>
             <br>
         </div>
         <br>
+        <label id="invalid-data" style="margin-left: 75%;"></label>
+
+        <br>
         <input id="chbox" style="margin-left: 75%;" type="checkbox" name="g3" value="agree"> 
         <label for="chbox" >remember me</label>
         
-        <button id="button" value="submit">Login</button>
+        <input type="submit" id="button" value="Login">
         <br>
+        <label for="have" style="margin-left: 30%;">  Haven't An Account?<a href="signUp.html"> Signup </a></label>
     </form>
-  <script src="js/bootstrap.bundle.min.js"></script>
-</body>
+    
+    <script src="https://kit.fontawesome.com/5c8f045964.js" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
 
+     <script src="js/data.js"></script>
+</body>
 </html>
