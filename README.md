@@ -5,7 +5,7 @@ Marwa Mohamed <br>
 shaza ahmed <br>
 Rania khalifa <br>
 
- # our project  <br>
+ # our project HRMS Shop  <br>
 Ecommerc Web App Using hmtl , css , js , json , using local storge <br>
 
 # future
@@ -15,3 +15,4 @@ Ecommerc Web App Using hmtl , css , js , json , using local storge <br>
 4-diplay many category  <br>
 5-read data from json <br>
 6-display cliced product to show in another page <br>
+and more future u can discover it
