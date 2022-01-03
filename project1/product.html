@@ -17,7 +17,7 @@
     <!--<script src="../JS/popper.min.js"></script>-->
 </head>
 
-<body onload="changHome(),getProductData()">
+<body>
     <!-- header -->
     <div class="navbar navbar-expand sticky-top">
         <div class="container">
@@ -42,8 +42,8 @@
                             src="images/technical-support.png"></a></li>
                 <li class="nav-item "><a href="cardPage.html" class="nav-link"><img
                             src="https://img.icons8.com/color/48/000000/add-shopping-cart--v2.png" /></a></li>
-                            <li id="nav-change-1" class="nav-item "></li>
-                            <li id="nav-change-2" class="nav-item "></li>
+                <li class="nav-item "><a href="signUp.html" class="nav-link">Sign Up /</a></li>
+                <li class="nav-item "><a href="login.html" class="nav-link"> Login</a></li>
             </div>
         </div>
     </div>
@@ -83,12 +83,12 @@
                         <div class="product__details__quantity">
                             <div class="quantity">
                                 <div class="pro-qty">
-                                    <input type="number" value="1">
+                                    <input type="text" value="1">
                                 </div>
                             </div>
                         </div>
-                        <a id="addToCardP" href="#" class="primary-btn" onclick="productToCard()">ADD TO CARD</a>
-                        <a id="favpro" href="#" class="heart-icon" onclick="FavProduct()"><span  class="far fa-heart"></span></a>
+                        <a href="#" class="primary-btn">ADD TO CARD</a>
+                        <a href="#" class="heart-icon"><span class="far fa-heart"></span></a>
                         <ul>
                             <li><b>Availability: </b> <span>In Stock</span></li>
                             <li><b>Available size: </b> <span>XS S M L</span></li>
@@ -135,7 +135,7 @@
     </div>
     <!--End Footer-->
 
-    <script src="js/data.js"></script>
+    <script src="js/getcarddata.js"></script>
 
 </body>
 
