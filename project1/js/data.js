@@ -12,6 +12,10 @@ var page =1;
 var records_per_page = 3;
 // to pass it to countinue pagenation
 var currentPage;
+var loginValid = false;
+var itemCount=0;
+var cfilter;
+
 
 // function to get all prouducts
 function getdata() {
@@ -35,21 +39,30 @@ function splitCategory() {
   console.log(woman);
 
 //to cheack which page is called
-  switch (pages) {
+switch (pages) {
     case 'Accessories':
     currentPage=jewelery;
+    cfilter='Accessories';
+
     changePage(jewelery);
       break;
       case 'Men':
       currentPage=men;
+      cfilter='Men';
+
       changePage(men);
+
       break;
       case 'Women':
       currentPage=woman;
+      cfilter='Women';
+
       changePage(woman);
       break;
       case 'Electronics':
       currentPage=electronics;
+      cfilter='Electronics';
+
     changePage(electronics);
       break;
   
@@ -90,36 +103,6 @@ function displayProduct(index,categ) {
    
    
  } 
-
-
- function cheackOut(current , prou) {
-   
-     if (localStorage.loginValid) {
-        var titles ='title'+current;
-        var prices= 'price'+current;
-        var imges= 'image'+current;
-        console.log(titles);
-        localStorage.setItem(titles,prou[current].title);
-        localStorage.setItem(prices,prou[current].price);
-        localStorage.setItem(imges,prou[current].image);
-     }
-     else{
-        window.location.href = "login.html";   
-
-     }
-  
-
-
- }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -169,6 +152,8 @@ function displayProduct(index,categ) {
       let cardDiv = document.createElement("div");
       cardDiv.className='col-lg-4 col-md-6';
       cardDiv.id=i;
+      var storgeid=0;
+
       
       //cardbody
       let cardBody=document.createElement('div');
@@ -216,12 +201,21 @@ function displayProduct(index,categ) {
       
        // last li for shopping icon
       liShopElement=document.createElement('li');
+      popDivElemet=document.createElement('div');
+      popDivElemet.className='popup';
+      popSpan=document.createElement('span');
+      popSpan.className='popuptext';
+      popSpan.id="myPopup"+i;
+      poptext=document.createTextNode('Added Sucsess');
+      popSpan.appendChild(poptext);
+      popDivElemet.appendChild(popSpan);
+      liShopElement.appendChild(popDivElemet);
       aShopElement=document.createElement('a');
       shopIcon=document.createElement('span');
       shopIcon.className='fas fa-shopping-cart';
       aShopElement.appendChild(shopIcon);
       shopIcon.onclick= function (){
-        cheackOut(cardDiv.id,categoryType);
+        cheackOut(storgeid,cardDiv.id,categoryType);
         
       }
       
@@ -316,11 +310,6 @@ function displayProduct(index,categ) {
 
 
 
-
-
-
- var loginValid = true;
-
 //checkName
 function checkName(e) {
     var regex = new RegExp("^[0-9]+$");
@@ -385,7 +374,7 @@ function logins(){
     console.log("login")
     if((document.getElementById('loginName').value == localStorage.username) && (document.getElementById('loginPass').value==localStorage.password)){
         alert(' vaild');
-
+            loginValid=true;
         localStorage.setItem('loginValid',loginValid);
         window.close();
 
@@ -394,10 +383,310 @@ function logins(){
     else
     {
         alert(' imvaild');
-
+        loginValid=false;
         console.log('in vaild')
         localStorage.setItem('loginValid','false')
         
  
     }
+}
+
+
+
+// function that show home page login or not
+
+function changHome() {
+    var part1= document.getElementById('nav-change-1');
+    var part2=document.getElementById('nav-change-2');
+    if(localStorage.loginValid=='true')
+    {
+        aSingupElm=document.createElement('a');
+        aSingupElm.href='#';
+        aSingupElm.className='nav-link';
+        var testSingup=document.createTextNode(localStorage.username +" / ");
+        aSingupElm.appendChild(testSingup);
+        part1.appendChild(aSingupElm);
+
+
+        aLogoutElm=document.createElement('a');
+        aLogoutElm.href='#';
+        aLogoutElm.className='nav-link';
+       
+        
+        var testLogout=document.createTextNode('logout');
+        aLogoutElm.appendChild(testLogout);
+        part2.appendChild(aLogoutElm);
+        aLogoutElm.onclick= function () {
+            logoutFun();
+            
+        }
+       
+        
+    }
+    else 
+    {
+        
+
+        aSingupElm=document.createElement('a');
+        aSingupElm.href='signUp.html';
+        aSingupElm.className='nav-link';
+        var testSingup=document.createTextNode('Sing UP /');
+        aSingupElm.appendChild(testSingup);
+        part1.appendChild(aSingupElm);
+
+
+        aLoginElm=document.createElement('a');
+        aLoginElm.href='signUp.html';
+        aLoginElm.className='nav-link';
+        var testLoginup=document.createTextNode('Login');
+        aSingupElm.appendChild(testLoginup);
+        part2.appendChild(aLoginElm);
+
+    }
+    
+}
+ // to logout 
+function logoutFun() {
+    localStorage.setItem('loginValid',0);
+    location.reload(true);
+    changHome();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+var arryOfPro=new Array();
+
+
+function cheackOut(itemarry,current , prou) {
+    if (localStorage.loginValid=='true') {
+            let storgeid;
+        switch (cfilter) {
+            case 'Accessories':
+           storgeid= parseInt(current)+20;
+    
+              break;
+              case 'Men':
+              storgeid= parseInt(current)+40;
+    
+              break;
+              case 'Women':
+              storgeid= parseInt(current)+60;
+    
+              break;
+              case 'Electronics':
+              storgeid= parseInt(current)+80;
+    
+              break;
+          
+            default:
+              break;
+          }
+          if(JSON.parse(localStorage.getItem("quentinTarantino"))!=null){
+            arryOfPro=JSON.parse(localStorage.getItem("quentinTarantino"));
+            arryOfPro.push(storgeid);
+
+          localStorage.setItem("quentinTarantino", JSON.stringify(arryOfPro));
+          console.log(localStorage.getItem("quentinTarantino"));
+
+          }else
+          {
+            arryOfPro.push(storgeid);
+            localStorage.setItem("quentinTarantino", JSON.stringify(arryOfPro));
+
+
+          }
+          
+       let titles ='title'+storgeid;
+       let prices= 'price'+storgeid;
+       let imges= 'image'+storgeid;
+       localStorage.setItem(titles,prou[current].title);
+       localStorage.setItem(prices,prou[current].price);
+       localStorage.setItem(imges,prou[current].image);
+       
+       itemCount++;
+       console.log(itemCount);
+
+       localStorage.setItem('itemCount',itemCount);
+       var popup = document.getElementById("myPopup"+current);
+       popup.classList.toggle("show");
+
+       setTimeout(function () {
+
+        popup.classList.toggle("show");
+
+       },1500)
+     
+
+    }
+    else{
+       window.location.href = "login.html";   
+
+    }
+ 
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+var counter;
+
+
+// funtion to show item in cheack out
+function showItemCard() {
+    console.log('show iteam');
+    console.log(itemCount);
+ counter=JSON.parse(localStorage.getItem("quentinTarantino"));
+   console.log(counter.length);
+    for (let index = 0; index <counter.length ;index++) {
+
+        let titles ='title'+counter[index];
+        let prices= 'price'+counter[index];
+        let imges= 'image'+counter[index];
+        var tableRow= document.createElement('tr');
+
+        var tBody= document.getElementById('cardItem');
+// td for img and title
+    var tdCardItem= document.createElement('td');
+    tdCardItem.className='shoping__cart__item';
+    var imgCardItem =document.createElement('img');
+    imgCardItem.src=localStorage.getItem(imges);
+    var titleCardItem =document.createElement('h5');
+    titleCardItemText=document.createTextNode(localStorage.getItem(titles));
+    titleCardItem.appendChild(titleCardItemText);
+    tdCardItem.appendChild(imgCardItem);
+    tdCardItem.appendChild(titleCardItem);
+// td for price
+    var tdCardPrice= document.createElement('td');
+    tdCardPrice.className='shoping__cart__price';
+   var PriceCardItem=document.createTextNode(localStorage.getItem(prices));
+    tdCardPrice.appendChild(PriceCardItem);
+
+// quentity
+    var tdItemQuen= document.createElement('td');
+    tdItemQuen.className='shoping__cart__quantity';
+
+    var qunDive= document.createElement('div');
+    qunDive.className='quantity';
+
+    
+    var proqunDive= document.createElement('div');
+    proqunDive.className='pro-qty';
+
+    var inputQun=document.createElement('input');
+    inputQun.type='text';
+    inputQun.value=1;
+
+
+    proqunDive.appendChild(inputQun);
+    qunDive.appendChild(proqunDive);
+    tdItemQuen.appendChild(qunDive);
+
+//td total
+var tdCardTotal= document.createElement('td');
+tdCardTotal.className='shoping__cart__total';
+var totalCardItemPrice=document.createTextNode(localStorage.getItem(prices));
+tdCardTotal.appendChild(totalCardItemPrice);
+
+// remove item icon
+var removeCardItem= document.createElement('td');
+var removeCardIcon= document.createElement('span');
+removeCardIcon.className='icon_close';
+removeCardItem.appendChild(removeCardIcon);  
+
+//append all td to tr
+tableRow.appendChild(tdCardItem);
+tableRow.appendChild(tdCardPrice);
+tableRow.appendChild(tdItemQuen);
+tableRow.appendChild(tdCardTotal);
+tableRow.appendChild(removeCardItem);
+tBody.appendChild(tableRow);
+
+    }
+    
+
+
+
+
+
+
+
+
+
+    
+}
+
+function getProductData() {
+    var pImg =document.getElementById('pImg');
+var pTitle= document.getElementById('pTitle');
+var pPrice =document.getElementById('pPrice');
+var pDescri=document.getElementById('pDescri');
+
+pPrice.innerHTML=localStorage.price;
+pTitle.innerHTML=localStorage.title;
+pDescri.innerHTML=localStorage.description;
+pImg.src=localStorage.image;
+    
+}
+
+
+
+
+function productToCard() {
+   
+    if (localStorage.loginValid=='true') {
+      
+        var aAddToPro=document.getElementById('addToCardP');
+        aAddToPro.innerHTML='Sucsess Added';
+        aAddToPro.style.backgroundColor="#155472";
+
+    }
+    else{
+       window.location.href = "login.html";   
+
+    }
+ 
+
+
+}
+
+
+function FavProduct() {
+    var fav=document.getElementById('favpro');
+
+    if (localStorage.loginValid=='true') {
+
+      
+        if(fav.style.backgroundColor=='red')
+        {        fav.style.backgroundColor="#fff"; }
+        else{
+            {        fav.style.backgroundColor="red";
+
+        }
+    }}
+
+    else{
+       window.location.href = "login.html";   
+
+    }
+ 
+
+
 }
