@@ -10,12 +10,13 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/project.css">
+    <script src="js/project.js"></script>
     <!--Javascript referance fill-->
     <script src="https://kit.fontawesome.com/5c8f045964.js" crossorigin="anonymous"></script>
     <script src="js/jquery-3.x-git.min.js" defer></script>
 </head>
 
-<body style="background-color: white;" onload="getdata()">
+<body style="background-color: white;" onload="changHome()">
     <!--Start Upper Bar-->
     <div class="upper-bar">
         <div class="container">
@@ -58,8 +59,8 @@
                             src="images/technical-support.png"></a></li>
                 <li class="nav-item "><a href="cardPage.html" class="nav-link"><img
                             src="https://img.icons8.com/color/48/000000/add-shopping-cart--v2.png" /></a></li>
-                <li class="nav-item "><a href="signUp.html" class="nav-link">Sign Up /</a></li>
-                <li class="nav-item "><a href="login.html" class="nav-link"> Login</a></li>
+                <li id="nav-change-1" class="nav-item "></li>
+                <li id="nav-change-2" class="nav-item "></li>
             </div>
         </div>
     </div>
@@ -192,23 +193,25 @@
                         </div>
                         <div class="discount__countdown" id="countdown-time">
                             <div class="countdown__item">
-                                <span>22</span>
+                                <span id="days"></span>
                                 <p>Days</p>
                             </div>
                             <div class="countdown__item">
-                                <span>18</span>
+                                <span id="hours"></span>
                                 <p>Hour</p>
                             </div>
                             <div class="countdown__item">
-                                <span>46</span>
+                                <span id="minutes"></span>
                                 <p>Min</p>
                             </div>
                             <div class="countdown__item">
-                                <span>05</span>
+                                <span id="seconds"></span>
                                 <p>Sec</p>
                             </div>
                         </div>
-                        <a href="#">Shop now</a>
+                        <div class="discount__countdown" id="expired"></div>
+                        <a href="women.html">Shop now</a>
+                    </div>
                     </div>
                 </div>
             </div>
