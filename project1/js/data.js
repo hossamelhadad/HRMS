@@ -373,7 +373,6 @@ function checkiden(x){
 function logins(){
     console.log("login")
     if((document.getElementById('loginName').value == localStorage.username) && (document.getElementById('loginPass').value==localStorage.password)){
-        alert(' vaild');
             loginValid=true;
         localStorage.setItem('loginValid',loginValid);
         window.close();
@@ -382,7 +381,6 @@ function logins(){
     }
     else
     {
-        alert(' imvaild');
         loginValid=false;
         console.log('in vaild')
         localStorage.setItem('loginValid','false')
