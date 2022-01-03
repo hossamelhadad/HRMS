@@ -1,17 +1,17 @@
 # HRMS
 team Name: <br>
-Hossam Hassan Elhadad 
-Marwa Mohamed
-shaza ahmed
-Rania khalifa
+Hossam Hassan Elhadad  <br>
+Marwa Mohamed <br>
+shaza ahmed <br>
+Rania khalifa <br>
 
- # our project 
-Ecommerc Web App Using hmtl , css , js , json , using local storge
+ # our project  <br>
+Ecommerc Web App Using hmtl , css , js , json , using local storge <br>
 
 # future
-1-login/sinup/logout __
-2-add to card__
-3-pagination__
-4-diplay many category __
-5-read data from json__
-6-display cliced product to show in another page__
+1-login/sinup/logout  <br>
+2-add to card <br>
+3-pagination <br>
+4-diplay many category  <br>
+5-read data from json <br>
+6-display cliced product to show in another page <br>
